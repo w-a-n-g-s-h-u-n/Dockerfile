@@ -1,0 +1,9 @@
+FROM frolvlad/alpine-oraclejre8
+MAINTAINER wangshun <wangshun@genomics.cn>
+
+ENV LANG=en_US.UTF8
+RUN echo "http://mirrors.aliyun.com/alpine/v3.8/main" > /etc/apk/repositories \
+    && echo "http://mirrors.aliyun.com/alpine/v3.8/community" >> /etc/apk/repositories \
+    && apk update upgrade \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
