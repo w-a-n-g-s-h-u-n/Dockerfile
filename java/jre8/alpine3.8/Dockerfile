@@ -2,7 +2,7 @@ FROM frolvlad/alpine-oraclejre8
 MAINTAINER wangshun <wangshun@wangshun.org>
 
 ENV LANG=en_US.UTF8 \
-    JRE_HOME=$JAVA_HOME/jre
+    JAVA_HOME=$JAVA_HOME/jre
 RUN echo "http://mirrors.aliyun.com/alpine/v3.8/main" > /etc/apk/repositories \
     && echo "http://mirrors.aliyun.com/alpine/v3.8/community" >> /etc/apk/repositories \
     && apk update upgrade \
