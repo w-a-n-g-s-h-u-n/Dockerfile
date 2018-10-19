@@ -4,7 +4,7 @@ MAINTAINER wangshun <wangshun@wangshun.org>
 ENV TOMCAT_MAJOR=8 \
     TOMCAT_VERSION=8.5.34 \
     TOMCAT_NAME=apache-tomcat \
-    CATALINA_HOME=/usr/local/${TOMCAT_NAME} \
+    CATALINA_HOME=/usr/local/$TOMCAT_NAME \
     CATALINA_OUT=/dev/null \
     PATH=$CATALINA_HOME/bin:$PATH
 
