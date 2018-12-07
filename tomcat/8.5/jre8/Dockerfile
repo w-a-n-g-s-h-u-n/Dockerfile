@@ -12,7 +12,8 @@ RUN apk add curl && \
     mv /usr/local/apache-tomcat-${TOMCAT_VERSION} ${CATALINA_HOME} && \
     apk del curl && \
     rm -rf ${CATALINA_HOME}/webapps/* ${CATALINA_HOME}/bin/*.bat /tmp/* /var/cache/apk/*
-ENV PATH=$CATALINA_HOME/bin:$PATH
+ENV PATH=$CATALINA_HOME/bin:$PATH \
+    JAVA_OPTS=" -Dsun.jnu.encoding=UTF-8 -Dfile.encoding=UTF-8 -Djava.security.egd=file:/dev/./urandom ":$JAVA_OPTS
 VOLUME ["$CATALINA_HOME/logs"]
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

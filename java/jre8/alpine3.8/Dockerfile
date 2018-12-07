@@ -1,7 +1,7 @@
 FROM frolvlad/alpine-oraclejre8
 MAINTAINER wangshun <wangshun@wangshun.org>
 
-ENV LANG=zh_CN.UTF-8 \
+ENV JAVA_OPTS=" -Dsun.jnu.encoding=UTF-8 -Dfile.encoding=UTF-8 " \
     JAVA_HOME=$JAVA_HOME/jre
 RUN echo "http://mirrors.aliyun.com/alpine/v3.8/main" > /etc/apk/repositories \
     && echo "http://mirrors.aliyun.com/alpine/v3.8/community" >> /etc/apk/repositories \
